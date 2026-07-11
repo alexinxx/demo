@@ -1,1 +1,41 @@
-#请输入文本def normalize_text(text):    # 去除掉首尾空格    text = text.strip()        # 去掉空格之后改为一个空格    parts = text.split()          text = " ".join(parts)            # 转为小写    text = text.lower()        return textdef input_text(text):    #检测是否是空输入    if len(text.strip()) == 0:        print("错误：输入不能为空，请至少输入一个字符")        return False          #检查是否超过最大长度    length=100    if len(text) > length:        print(f"错误：输入过长，最大允许 {length} 个字符")          return False      return Truedef main():    print("输入文本，输入 quit 退出")    while True:        user_input = input("请输入文本:")        if user_input.lower() == "quit": #输入quit即可退出            print("已退出")            break        if input_text(user_input):            print(normalize_text(user_input))   #规则化文本if __name__ == "__main__":    main()
+#请输入文本
+
+def normalize_text(text):
+    # 去除掉首尾空格
+    text = text.strip()
+    
+    # 去掉空格之后改为一个空格
+    parts = text.split()      
+    text = " ".join(parts)    
+    
+    # 转为小写
+    text = text.lower()
+    
+    return text
+
+
+def input_text(text):
+    #检测是否是空输入
+    if len(text.strip()) == 0:
+        print("错误：输入不能为空，请至少输入一个字符")
+        return False  
+    
+    #检查是否超过最大长度
+    length=100
+    if len(text) > length:
+        print(f"错误：输入过长，最大允许 {length} 个字符")  
+        return False  
+    return True
+
+def main():
+    print("输入文本，输入 quit 退出")
+    while True:
+        user_input = input("请输入文本:")
+        if user_input.lower() == "quit": #输入quit即可退出
+            print("已退出")
+            break
+        if input_text(user_input):
+            print(normalize_text(user_input))   #规则化文本
+
+if __name__ == "__main__":
+    main()
