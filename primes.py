@@ -34,6 +34,8 @@ for case in testCases:
     if case > 1000:
         print("First 10 primes:", complete[:10])
         print("Last 10 primes:", complete[-10:])
+    else:
+        print("Primes:", complete)
     print(len(complete), "primes found")
 
 print("FULL TIME:", (time.perf_counter_ns() - fullOrigin) * 10**-6, "ms")
