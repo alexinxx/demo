@@ -1,5 +1,3 @@
-# from tkinter import N
-
 
 prim = []
 notPrime = [False] * 105
